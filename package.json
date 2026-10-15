@@ -1,0 +1,47 @@
+{
+  "name": "ds-usage",
+  "version": "0.2.3",
+  "description": "DS Usage: an independent usage window for DeepSeek Harness — the token ledger, model charts, and heat calendar over every model call in this DSH",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "deepseek",
+    "usage",
+    "tokens"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "src/host/index.js",
+  "exports": {
+    ".": "./src/host/index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/host/",
+    "src/client/",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

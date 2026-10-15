@@ -1,0 +1,5 @@
+# Mounts the DS Usage host plugin; the browser half is discovered through the
+# package's dsh.client manifest and ./client export.
+- insert:
+    - id: ds-usage
+      name: ds-usage
